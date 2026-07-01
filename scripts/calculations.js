@@ -15,16 +15,16 @@ for (const [categoryName, amountValue] of expenseEntries) {
   totalExpensesValue += amountValue;
 }
 
-const calculateAverageExpense = () => {
+function calculateAverageExpense() {
   if (expenseEntries.length === 0) {
     return 0;
   }
   return totalExpensesValue / expenseEntries.length;
-};
+}
 
-const calculateBalance = () => {
+function calculateBalance() {
   return budgetValue - totalExpensesValue;
-};
+}
 
 let balanceColor = "green";
 
@@ -39,7 +39,7 @@ function updateBalanceColor() {
   }
 }
 
-const calculateCategoryExpenses = (category) => {
+function calculateCategoryExpenses(category) {
   let categoryTotal = 0;
   for (const [categoryName, amountValue] of expenseEntries) {
     if (categoryName === category) {
@@ -47,7 +47,7 @@ const calculateCategoryExpenses = (category) => {
     }
   }
   return categoryTotal;
-};
+}
 
 function calculateLargestCategory() {
   const categoriesData = [];
